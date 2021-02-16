@@ -2,7 +2,7 @@ package part1.lessons15.task1;
 
 import java.awt.*;
 import java.lang.*;
-import java.util.ArrayList;
+import java.util.*;
 import java.util.List;
 
 public class Main {
@@ -15,6 +15,7 @@ public class Main {
         PersonSuperComparator.person four = new PersonSuperComparator.person("Ivan",21);
         PersonSuperComparator.person five=new PersonSuperComparator.person("Olga",19);
         PersonSuperComparator.person six = new PersonSuperComparator.person("Ivan",40);
+        PersonSuperComparator.person seven = new PersonSuperComparator.person("Ivan",40);
 
         person.add(one);
         person.add(two);
@@ -22,6 +23,8 @@ public class Main {
         person.add(four);
         person.add(five);
         person.add(six);
+        person.add(seven);
+
 
         for (PersonSuperComparator.person p:person)
             System.out.println(p);

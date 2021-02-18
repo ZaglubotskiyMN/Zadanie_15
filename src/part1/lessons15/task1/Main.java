@@ -7,15 +7,15 @@ import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) {
-        List<PersonSuperComparator.person> person = new ArrayList<>();
-        PersonSuperComparator.person one = new PersonSuperComparator.person("Ivan", 20);
-        PersonSuperComparator.person two = new PersonSuperComparator.person("Petr", 25);
-        PersonSuperComparator.person three = new PersonSuperComparator.person("Elena", 19);
-        PersonSuperComparator.person four = new PersonSuperComparator.person("Ivan", 21);
-        PersonSuperComparator.person five = new PersonSuperComparator.person("Olga", 19);
-        PersonSuperComparator.person six = new PersonSuperComparator.person("Ivan", 40);
-        PersonSuperComparator.person seven = new PersonSuperComparator.person("Ivan", 40);
+    public static void main(String[] args)  {
+        List<person> person = new ArrayList<>();
+        person one = new person("Ivan", 20);
+        person two = new person("Petr", 25);
+        person three = new person("Elena", 19);
+        person four = new person("Ivan", 21);
+        person five = new person("Olga", 19);
+        person six = new person("Ivan", 40);
+        person seven = new person("Ivan", 40);
 
         person.add(one);
         person.add(two);
@@ -25,16 +25,11 @@ public class Main {
         person.add(six);
         person.add(seven);
 
-
-        for (PersonSuperComparator.person p : person)
+        Collections.sort(person);
+        for (person p : person)
             System.out.println(p);
 
 
-    }
-}
-
-class PersonSuperComparator {
-    public static void Comparator() {
 
     }
 
@@ -58,10 +53,11 @@ class PersonSuperComparator {
         }
         @Override
         public int compareTo(person p) {
-            return getName().compareTo(p.getName());
-           // if (getName()==p.getName())
-            //return 1;
-            //else return -1;
+           // return getName().compareTo(p.getName());
+            if (getName()==p.getName())
+           return 1;
+           else return -1;
+
 
         }
 

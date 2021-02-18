@@ -9,13 +9,13 @@ public class Main {
 
     public static void main(String[] args) {
         List<PersonSuperComparator.person> person = new ArrayList<>();
-        PersonSuperComparator.person one = new PersonSuperComparator.person("Ivan",20);
-        PersonSuperComparator.person two= new PersonSuperComparator.person("Petr",25);
-        PersonSuperComparator.person three = new PersonSuperComparator.person("Elena",19);
-        PersonSuperComparator.person four = new PersonSuperComparator.person("Ivan",21);
-        PersonSuperComparator.person five=new PersonSuperComparator.person("Olga",19);
-        PersonSuperComparator.person six = new PersonSuperComparator.person("Ivan",40);
-        PersonSuperComparator.person seven = new PersonSuperComparator.person("Ivan",40);
+        PersonSuperComparator.person one = new PersonSuperComparator.person("Ivan", 20);
+        PersonSuperComparator.person two = new PersonSuperComparator.person("Petr", 25);
+        PersonSuperComparator.person three = new PersonSuperComparator.person("Elena", 19);
+        PersonSuperComparator.person four = new PersonSuperComparator.person("Ivan", 21);
+        PersonSuperComparator.person five = new PersonSuperComparator.person("Olga", 19);
+        PersonSuperComparator.person six = new PersonSuperComparator.person("Ivan", 40);
+        PersonSuperComparator.person seven = new PersonSuperComparator.person("Ivan", 40);
 
         person.add(one);
         person.add(two);
@@ -26,19 +26,19 @@ public class Main {
         person.add(seven);
 
 
-        for (PersonSuperComparator.person p:person)
+        for (PersonSuperComparator.person p : person)
             System.out.println(p);
 
 
     }
 }
 
- class PersonSuperComparator  {
+class PersonSuperComparator {
     public static void Comparator() {
 
     }
 
-    public static class person implements Comparable<Object> {
+    public static class person implements Comparable<person> {
         private String name;
         private int age;
         String temp = "name=%s,age=%d";
@@ -47,14 +47,19 @@ public class Main {
             this.setName(name);
             this.setAge(age);
         }
+
         @Override
-        public String toString()
-        {
-            return String.format(temp,name,age);
+        public String toString() {
+            return String.format(temp, name, age);
         }
 
         public String getName() {
             return name;
+        }
+        @Override
+        public int compareTo(person p) {
+            return name.compareTo(p.getName());
+
         }
 
         public void setName(String name) {
@@ -71,7 +76,9 @@ public class Main {
 
 
 
-        @Override
+
+
+       /* @Override
         public int compareTo(Object obj) {
 
             person good = (person)obj;
@@ -84,7 +91,10 @@ public class Main {
             if(res!=0)
                 return res;
             return 0;
-        }
-    }
+        }*/
+
+
+
+}
 
 }

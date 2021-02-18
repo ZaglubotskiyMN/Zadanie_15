@@ -58,7 +58,10 @@ class PersonSuperComparator {
         }
         @Override
         public int compareTo(person p) {
-            return name.compareTo(p.getName());
+            return getName().compareTo(p.getName());
+           // if (getName()==p.getName())
+            //return 1;
+            //else return -1;
 
         }
 

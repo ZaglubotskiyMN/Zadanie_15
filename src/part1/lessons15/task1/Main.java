@@ -16,7 +16,8 @@ public class Main {
         person four = new person("Ivan", 21);
         person five = new person("Olga", 19);
         person six = new person("Ivan", 40);
-        person seven = new person("Ivan", 40);
+        person seven = new person("Alex", 33);
+
 
         Listperson.add(one);
         Listperson.add(two);
@@ -25,6 +26,7 @@ public class Main {
         Listperson.add(five);
         Listperson.add(six);
         Listperson.add(seven);
+
 
 
         System.out.println("Без сортировки");

@@ -7,8 +7,9 @@ import java.util.List;
 
 public class Main {
 
+
     public static void main(String[] args)  {
-        List<person> person = new ArrayList<>();
+        List<person> person = new ArrayList<person>();
         person one = new person("Ivan", 20);
         person two = new person("Petr", 25);
         person three = new person("Elena", 19);
@@ -25,15 +26,18 @@ public class Main {
         person.add(six);
         person.add(seven);
 
-        Collections.sort(person);
+        //Collections.sort(person);
+        //System.out.println("not sorter");
         for (person p : person)
             System.out.println(p);
 
 
 
+
+
     }
 
-    public static class person implements Comparable<person> {
+    public static class person  {
         private String name;
         private int age;
         String temp = "name=%s,age=%d";
@@ -51,15 +55,7 @@ public class Main {
         public String getName() {
             return name;
         }
-        @Override
-        public int compareTo(person p) {
-           // return getName().compareTo(p.getName());
-            if (getName()==p.getName())
-           return 1;
-           else return -1;
 
-
-        }
 
         public void setName(String name) {
             this.name = name;
@@ -71,6 +67,19 @@ public class Main {
 
         public void setAge(int age) {
             this.age = age;
+        }
+
+        class sortedbyname implements Comparable<person> {
+            @Override
+            public int compareTo(person p) {
+                // return getName().compareTo(p.getName());
+                if (getName() == p.getName())
+                    return 1;
+                else return -1;
+
+
+            }
+
         }
 
 
